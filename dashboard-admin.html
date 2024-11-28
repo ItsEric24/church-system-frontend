@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+
+      /* Sidebar styling */
+      .sidebar {
+        width: 250px;
+        height: 100vh;
+        background-color: #4848da;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .sidebar h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+      .sidebar ul li {
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      .sidebar ul li:hover,
+      .sidebar ul li.active {
+        background-color: #6a6add;
+        font-weight: bold;
+      }
+
+      /* Main content styling */
+      .main-content {
+        margin-left: 260px;
+        padding: 20px;
+      }
+      .header {
+        background-color: white;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+      .header h1 {
+        margin: 0;
+      }
+      .card {
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        display: none; /* Hide all cards by default */
+      }
+      .card h2 {
+        margin-top: 0;
+      }
+      .card.active {
+        display: block; /* Show active card */
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .sidebar {
+          width: 100%;
+          height: auto;
+          position: relative;
+        }
+        .main-content {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Admin Dashboard</h2>
+      <ul>
+        <li class="active">Dashboard</li>
+        <li>Manage Users</li>
+        <li>Manage Events</li>
+        <li>Prayer Requests</li>
+        <li>Settings</li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header Section -->
+      <div class="header">
+        <h1>Welcome, Admin</h1>
+        <p>Role: Administrator</p>
+      </div>
+
+      <!-- Dashboard Content -->
+      <div class="card active" id="dashboard-card">
+        <h2>Admin Dashboard</h2>
+        <p>Overview of the system's activity.</p>
+      </div>
+      <div class="card" id="manage-users-card">
+        <h2>Manage Users</h2>
+        <p>You can view, edit, and delete user accounts here.</p>
+      </div>
+      <div class="card" id="manage-events-card">
+        <h2>Manage Events</h2>
+        <p>Upcoming church events can be added or edited here.</p>
+      </div>
+      <div class="card" id="prayer-requests-card">
+        <h2>Prayer Requests</h2>
+        <p>Here you can view all submitted prayer requests.</p>
+      </div>
+      <div class="card" id="settings-card">
+        <h2>Settings</h2>
+        <p>Adjust system settings or configure preferences here.</p>
+      </div>
+    </div>
+    <!-- <script src="handlers.js"></script> -->
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/form-styles.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="register-container">
+      <div class="heading-container">
+        <div class="sign-up-logo">
+          <img
+            class="register-logo"
+            src="pcea-logo.png"
+            alt="register-form-logo"
+          />
+        </div>
+        <h1 class="register-heading">Register Form</h1>
+      </div>
+      <form class="register-form" id="register-form">
+        <label for="username">Username:</label>
+        <input id="username" type="text" name="username" />
+
+        <label for="id">National ID:</label>
+        <input id="id" type="text" name="nationalId" />
+
+        <label for="email">Email:</label>
+        <input id="email" type="email" name="email" />
+
+        <label for="sex">Sex:</label>
+        <input id="sex" type="text" name="sex" />
+
+        <label for="dist-no">District No:</label>
+        <input id="dist-no" type="text" name="districtNumber" />
+
+        <label for="pass">Password:</label>
+        <input id="pass" type="password" name="password" />
+
+        <div class="btn-container">
+          <button class="register-btn" id="register-btn">
+            <a href="/index.html">Back</a>
+          </button>
+          <button type="submit" class="register-btn">Register</button>
+        </div>
+      </form>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
