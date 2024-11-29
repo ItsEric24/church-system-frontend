@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/form-styles.css" />
-    <title>Login</title>
-  </head>
-  <body>
-    <div class="register-container">
-      <div class="heading-container">
-        <div class="sign-up-logo">
-          <img
-            class="register-logo"
-            src="pcea-logo.png"
-            alt="register-form-logo"
-          />
-        </div>
-        <h1 class="">Login Form</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/form-styles.css" />
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="register-container">
+    <div class="heading-container">
+      <div class="sign-up-logo">
+        <img class="register-logo" src="pcea-logo.png" alt="register-form-logo" />
       </div>
-      <form class="register-form">
-        <label for="username">Username:</label>
-        <input id="username" type="text" name="username" />
-
-        <label for="dist-no">District No:</label>
-        <input id="dist-no" type="text" name="district number" />
-
-        <label for="pass">Password:</label>
-        <input id="pass" type="password" name="pass" />
-
-        <div class="btn-container">
-          <button class="register-btn" id="login-btn">
-            <a href="/index.html">Back</a>
-          </button>
-          <button type="submit" class="register-btn">
-            <a href="/login.html">Register</a>
-          </button>
-        </div>
-      </form>
+      <h1 class="">Login Form</h1>
     </div>
-    <script src="app.js"></script>
-  </body>
+    <form class="register-form" id="loginForm">
+      <label for="email">Email:</label>
+      <input id="email" type="email" name="email" />
+
+      <label for="dist-no">District No:</label>
+      <input id="dist-no" type="text" name="districtNumber" />
+
+      <label for="pass">Password:</label>
+      <input id="pass" type="password" name="password" />
+
+      <div class="btn-container">
+        <button class="register-btn" id="login-btn">
+          <a href="/index.html">Back</a>
+        </button>
+        <button type="submit" class="register-btn" id="login-btn">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+  <script src="login.js"></script>
+</body>
+
 </html>

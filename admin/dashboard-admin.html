@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <ul>
+      <li class="active">Dashboard</li>
+      <li>Manage Users</li>
+      <li>Manage Events</li>
+      <li>Add Events</li>
+      <li id="logout-btn">Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header Section -->
+    <div class="header">
+      <h1 id="welcome-title">Welcome, Admin</h1>
+      <p>Role: Administrator</p>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="card active" id="dashboard-card">
+      <h2>Admin Dashboard</h2>
+      <p>Overview of the system's activity.</p>
+    </div>
+    <div class="card" id="manage-users-card">
+      <h2>Manage Users</h2>
+      <p>You can view, edit, and delete user accounts here.</p>
+    </div>
+    <div class="card" id="manage-events-card">
+      <h2>Manage Events</h2>
+      <p>Upcoming church events can be added or edited here.</p>
+    </div>
+    <div class="card" id="add-events">
+      <h2>Add An Event</h2>
+      <form method="post" id="event-form" class="event-form">
+        <label for="event-name">Event Name</label>
+        <input type="text" name="eventName" id="event-name">
+        <label for="event-date">Event Date</label>
+        <input type="date" name="eventDate" id="event-date">
+        <label for="event-time">Event Time</label>
+        <input type="time" name="eventTime" id="event-time">
+        <button type="submit" id="event-submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+
+</html>

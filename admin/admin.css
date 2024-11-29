@@ -1,0 +1,106 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #4848da;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.sidebar ul li:hover,
+.sidebar ul li.active {
+  background-color: #6a6add;
+  font-weight: bold;
+}
+
+/* Main content styling */
+.main-content {
+  margin-left: 260px;
+  padding: 20px;
+}
+.header {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.header h1 {
+  margin: 0;
+}
+.card {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: none; /* Hide all cards by default */
+}
+.card h2 {
+  margin-top: 0;
+}
+.card.active {
+  display: block; /* Show active card */
+}
+
+.event-form{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  width: 50%;
+}
+
+.event-form label{
+  margin-top: 20px;
+}
+
+.event-form input{
+  padding: 10px;
+}
+
+.event-form button{
+  padding: 8px 10px;
+  background-color: #4848da;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.event-form button:hover{
+  background-color: #6a6add;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}
