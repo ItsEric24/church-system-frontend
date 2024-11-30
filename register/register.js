@@ -29,7 +29,7 @@ async function registerUser(userData) {
     body: JSON.stringify(userData),
   });
   if (response.status === 200) {
-    window.location.href = "./login.html";
+    window.location.href = "../login/login.html";
   }
 }
 

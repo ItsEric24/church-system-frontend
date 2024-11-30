@@ -31,11 +31,11 @@ loginForm.addEventListener("submit", async (event) => {
     localStorage.setItem("authToken", JSON.stringify(data));
 
     if (data && !data.isAdmin) {
-      window.location.href = "./users/dashboard-user.html";
+      window.location.href = "../users/dashboard-user.html";
     }
 
     if (data && data.isAdmin) {
-      window.location.href = "./admin/dashboard-admin.html";
+      window.location.href = "../admin/dashboard-admin.html";
     }
   } else {
     const errorMessage = document.createElement("p");

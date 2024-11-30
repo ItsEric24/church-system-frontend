@@ -63,22 +63,22 @@ body {
   display: block; /* Show active card */
 }
 
-.event-form{
+.event-form {
   display: flex;
   flex-direction: column;
   padding: 15px;
   width: 50%;
 }
 
-.event-form label{
+.event-form label {
   margin-top: 20px;
 }
 
-.event-form input{
+.event-form input {
   padding: 10px;
 }
 
-.event-form button{
+.event-form button {
   padding: 8px 10px;
   background-color: #4848da;
   color: white;
@@ -89,8 +89,74 @@ body {
   margin-top: 30px;
 }
 
-.event-form button:hover{
+.event-form button:hover {
   background-color: #6a6add;
+}
+
+/* Style for the users table */
+#users-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#users-table th,
+#users-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+#users-table thead {
+  background-color: #4848da;
+  color: white;
+}
+
+#users-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+#users-table tbody tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+#users-table tbody tr:hover {
+  background-color: #e0e0ff;
+}
+
+/* Style for the events table */
+#events-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#events-table th,
+#events-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+#events-table thead {
+  background-color: #4848da;
+  color: white;
+}
+
+#events-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+#events-table tbody tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+#events-table tbody tr:hover {
+  background-color: #e0e0ff;
 }
 
 /* Responsive Design */

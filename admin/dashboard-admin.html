@@ -32,15 +32,38 @@
     <!-- Dashboard Content -->
     <div class="card active" id="dashboard-card">
       <h2>Admin Dashboard</h2>
-      <p>Overview of the system's activity.</p>
     </div>
     <div class="card" id="manage-users-card">
       <h2>Manage Users</h2>
-      <p>You can view, edit, and delete user accounts here.</p>
+      <table id="users-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>District Number</th>
+            <th>Card Number</th>
+          </tr>
+        </thead>
+        <tbody id="users-tbody">
+          <!-- User rows will be dynamically inserted here -->
+        </tbody>
+      </table>
+
     </div>
     <div class="card" id="manage-events-card">
       <h2>Manage Events</h2>
-      <p>Upcoming church events can be added or edited here.</p>
+      <table id="events-table">
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Event rows will be dynamically inserted here -->
+        </tbody>
+      </table>
     </div>
     <div class="card" id="add-events">
       <h2>Add An Event</h2>

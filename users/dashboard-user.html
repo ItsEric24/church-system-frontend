@@ -1,126 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Church Dashboard</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #f4f4f4;
-      }
-      /* Sidebar styling */
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Church Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Sidebar styling */
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: #4848da;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .sidebar ul li:hover,
+    .sidebar ul li.active {
+      background-color: #6a6add;
+      font-weight: bold;
+    }
+
+    /* Main content styling */
+    .main-content {
+      margin-left: 260px;
+      padding: 20px;
+    }
+
+    .header {
+      background-color: white;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      display: none;
+      /* Hide all cards by default */
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+
+    .card.active {
+      display: block;
+      /* Show active card */
+    }
+
+    /* Style for the events table */
+    #events-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    #events-table th,
+    #events-table td {
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    #events-table thead {
+      background-color: #4848da;
+      color: white;
+    }
+
+    #events-table tbody tr:nth-child(odd) {
+      background-color: #f9f9f9;
+    }
+
+    #events-table tbody tr:nth-child(even) {
+      background-color: #f4f4f4;
+    }
+
+    #events-table tbody tr:hover {
+      background-color: #e0e0ff;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
       .sidebar {
-        width: 250px;
-        height: 100vh;
-        background-color: #4848da;
-        color: white;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding-top: 20px;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        height: auto;
+        position: relative;
       }
-      .sidebar h2 {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      .sidebar ul {
-        list-style: none;
-        padding: 0;
-      }
-      .sidebar ul li {
-        padding: 10px 20px;
-        cursor: pointer;
-      }
-      .sidebar ul li:hover,
-      .sidebar ul li.active {
-        background-color: #6a6add;
-        font-weight: bold;
-      }
-      /* Main content styling */
+
       .main-content {
-        margin-left: 260px;
-        padding: 20px;
+        margin-left: 0;
       }
-      .header {
-        background-color: white;
-        padding: 15px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-      }
-      .header h1 {
-        margin: 0;
-      }
-      .card {
-        background: white;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        padding: 15px;
-        display: none; /* Hide all cards by default */
-      }
-      .card h2 {
-        margin-top: 0;
-      }
-      .card.active {
-        display: block; /* Show active card */
-      }
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .sidebar {
-          width: 100%;
-          height: auto;
-          position: relative;
-        }
-        .main-content {
-          margin-left: 0;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <h2>PCEA Dashboard</h2>
-      <ul>
-        <li class="active">Dashboard</li>
-        <li>Events</li>
-        <li>Profile</li>
-        <li id="logout-btn">Logout</li>
-      </ul>
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>PCEA Dashboard</h2>
+    <ul>
+      <li class="active">Dashboard</li>
+      <li>Events</li>
+      <li>Profile</li>
+      <li id="logout-btn">Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header Section -->
+    <div class="header">
+      <h1 id="welcome-title">Loading...</h1>
+      <p><strong>Role:</strong> User</p>
+      <p id="profile-card-number-header"><strong>Your Card Number:</strong> </p>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-      <!-- Header Section -->
-      <div class="header">
-        <h1 id="welcome-title">Loading...</h1>
-        <p><strong>Role:</strong> User</p>
-        <p id="profile-card-number-header"><strong>Your Card Number:</strong> </p>
-      </div>
-
-      <!-- Dashboard Content -->
-      <div class="card active" id="dashboard-card">
-        <h2>Welcome to the Dashboard</h2>
-        <p>This is the main dashboard view with general information.</p>
-      </div>
-      <div class="card" id="events-card">
-        <h2>Upcoming Events</h2>
-        <ul>
-          <li><strong>Sunday Worship:</strong> Dec 3, 10:00 AM</li>
-          <li><strong>Christmas Service:</strong> Dec 25, 6:00 PM</li>
-          <li><strong>Community Outreach:</strong> Jan 5, 9:00 AM</li>
-        </ul>
-      </div>
-      <div class="card" id="profile-card">
-        <h2>My Profile</h2>
-        <p id="profile-name"><strong> Name:</strong></p>
-        <p id="profile-email"><strong> Email:</strong></p>
-        <p id="profile-card-number"><strong>Card Number:</strong></p>
-      </div>
+    <!-- Dashboard Content -->
+    <div class="card active" id="dashboard-card">
+      <h2>Welcome to the Dashboard</h2>
+      <p id="main-info">No infomation at the moment</p>
     </div>
-    <script src="users.js"></script>
-  </body>
+    <div class="card" id="events-card">
+      <h2>Upcoming Events</h2>
+      <table id="events-table">
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Event rows will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+    <div class="card" id="profile-card">
+      <h2>My Profile</h2>
+      <p id="profile-name"><strong> Name:</strong></p>
+      <p id="profile-email"><strong> Email:</strong></p>
+      <p id="profile-card-number"><strong>Card Number:</strong></p>
+    </div>
+  </div>
+  <script src="users.js"></script>
+</body>
+
 </html>
